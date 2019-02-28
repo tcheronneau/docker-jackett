@@ -1,6 +1,6 @@
 FROM hub.mcth.fr/mono:bionic
 
-ENV JACKETT_RELEASE="v0.10.849"
+ENV JACKETT_RELEASE="v0.10.852"
 ENV XDG_DATA_HOME="/config"
 ENV XDG_CONFIG_HOME="/config"
 
