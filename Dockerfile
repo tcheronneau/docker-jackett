@@ -1,7 +1,7 @@
 FROM hub.mcth.fr/mono:bionic
 
-ENV JACKETT_RELEASE="v0.10.861"
 ENV XDG_DATA_HOME="/config"
+ENV JACKETT_RELEASE="v0.10.862"
 ENV XDG_CONFIG_HOME="/config"
 
 RUN apt-get update && \
@@ -10,11 +10,8 @@ RUN apt-get update && \
 	echo "**** install jackett ****" && \
  	mkdir -p \
  	   /app/jackett && \
- 	if [ -z ${JACKETT_RELEASE+x} ]; then \
- 	   JACKETT_RELEASE=$(curl -sX GET "https://api.github.com/repos/Jackett/Jackett/releases/latest" \
  	   | awk '/tag_name/{print $4;exit}' FS='[""]'); \
  	fi && \
- 	jackett_url=$(curl -s https://api.github.com/repos/Jackett/Jackett/releases/tags/"${JACKETT_RELEASE}" \
  	   |jq -r '.assets[].browser_download_url' |grep Mono) && \
  	curl -o \
  	/tmp/jacket.tar.gz -L \
