@@ -1,7 +1,7 @@
 FROM hub.mcth.fr/mono:bionic
 
 ENV XDG_DATA_HOME="/config"
-ENV JACKETT_RELEASE="v0.10.878"
+ENV JACKETT_RELEASE="v0.10.880"
 ENV XDG_CONFIG_HOME="/config"
 
 RUN apt-get update && \
